@@ -8,7 +8,7 @@ var moment = require('moment')
 
 var indexRouter = require('./routes/index');
 var cartRouter = require('./routes/cart')
-var bookingsRouter = require('./routes/bookings')
+var bookingRouter = require('./routes/bookings')
 
 var app = express();
 
@@ -23,6 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/cart', cartRouter);
-app.use('/bookings', bookingsRouter)
+app.use('/bookings', bookingRouter)
 
 module.exports = app;
