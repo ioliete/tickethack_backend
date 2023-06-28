@@ -11,10 +11,9 @@ router.post('/',  (req, res) => {
         departureTime : req.body.departureTime,
 	    price: req.body.price,
     })    
-    newTrip.save().then(data => {console.log(data)})
-    res.json({ data })
+    newTrip.save().then(data => {console.log(data)
+    res.json( data )
 })
-
-
+});
 
 module.exports = router;
