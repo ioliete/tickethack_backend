@@ -11,14 +11,14 @@ router.post('/', (req, res) => {
     const arrival = req.body.arrival;
     const departure = req.body.departure;
     const formattedDate = moment(req.body.date).format('YYYY-MM-DDT');
-    Trip.find({ departure, arrival})
-    .then(data => {
-        const tripArray = []
-        for (let trips of data) {
-        if (moment(trips.date).format('YYYY-MM-DDT') === formattedDate) {
-            tripArray.push(trips)
+            Trip.find({ departure, arrival})
+            .then(data => {
+            const tripArray = []
+            for (let trips of data) {
+                if (moment(trips.date).format('YYYY-MM-DDT') === formattedDate) {
+                tripArray.push(trips)
+            }
         }
-    }
         res.json(tripArray)
     })
 });

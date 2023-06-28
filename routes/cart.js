@@ -16,4 +16,20 @@ router.post('/',  (req, res) => {
 })
 });
 
+router.get('/', (req, res) =>{
+    Cart.find({}).then(data => {
+    res.json(data)})
+    })
+    
+    router.delete('/', (req, res) =>{
+      const departureTime = req.query.departureTime;
+    
+      Cart.deleteOne({ departureTime })
+          .then(dataa => {
+              console.log("Data deleted");
+              res.json(dataa);
+          })
+    })
+
+
 module.exports = router;
